@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.openBtn {
+  padding: 16px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.5s ease;
+}
+.openBtn:hover {
+  background-color: #6f6f6f;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #909090;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.modalHidden {
+  display: none;
+}
+
+.modalBody {
+  background-color: white;
+  max-width: 320px;
+  min-width: 220px;
+  min-height: 200px;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 2px 4px 7px #6f6f6f;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.closeModalBtn {
+  padding: 10px 10px;
+  background-image: url("/img/close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}

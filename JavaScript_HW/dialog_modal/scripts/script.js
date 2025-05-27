@@ -1,0 +1,29 @@
+const dialog = document.querySelector(".dialog");
+const dialogContent = document.querySelector(".dialogContent");
+const closeDialogBtn = document.querySelector(".closeDialog");
+const openDialogBtn = document.querySelector(".openDialog");
+
+const openDialog = () => {
+  dialog.classList.add("dialogOpen");
+};
+
+const closeDialog = () => {
+  dialog.classList.remove("dialogOpen");
+};
+
+openDialogBtn.addEventListener("click", () => {
+  openDialog();
+  openDialogBtn.style.display = "none";
+});
+
+closeDialogBtn.addEventListener("click", () => {
+  closeDialog();
+  openDialogBtn.style.display = "block";
+});
+
+dialog.addEventListener("click", (e) => {
+  if (!dialogContent.contains(e.target)) {
+    closeDialog();
+    openDialogBtn.style.display = "block";
+  }
+});
