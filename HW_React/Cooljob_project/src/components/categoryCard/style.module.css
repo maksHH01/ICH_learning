@@ -1,0 +1,23 @@
+.cardsStyles {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  width: 270px;
+  height: 198px;
+  padding: 60px 30px 30px 30px;
+}
+.customCard {
+  background-color: #e4f2ff;
+  color: #222;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.CardName {
+  font-weight: 500;
+}
+
+.iconStyles {
+  width: 25px;
+  height: 25px;
+}

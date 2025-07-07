@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+}
+
+.container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 100px;
+  position: relative;
+}
