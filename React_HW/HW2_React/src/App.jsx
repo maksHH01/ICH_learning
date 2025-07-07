@@ -1,21 +1,37 @@
+import { useState } from "react";
 import "./App.css";
-import Greeting from "./components/Greeting";
-import OrderStatus from "./components/OrderStatus";
-import ShoppingList from "./components/ShoppingList";
+import Task from "./components/Task";
 
 function App() {
-  let mainName = "Max";
+  const [todo, setTodo] = useState([
+    { id: 1, text: "Задача номер 1" },
+    { id: 2, text: "Задача номер 2" },
+    { id: 3, text: "Задача номер 3" },
+  ]);
 
-  let list = ["Яблоко", "Груша", "Апельсин"];
+  function addTodo() {
+    const newTask = {
+      id: Date.now(),
+      text: `Задача ${todo.length + 1}`,
+    };
+    setTodo([...todo, newTask]);
+  }
 
-  let orders = [{ orderId: 123, status: "в пути" }];
+  function removeTodo() {
+    setTodo([]);
+  }
 
   return (
-    <>
-      <Greeting name={mainName} />
-      <ShoppingList items={list} />
-      <OrderStatus orderId={orders[0].orderId} status={orders[0].status} />
-    </>
+    <div>
+      <h1>Список задач:</h1>
+      <button onClick={addTodo}>Add todo</button>
+      <button onClick={removeTodo}>Remove todo</button>
+      <ul>
+        {todo.map((task) => {
+          return <Task key={task.id} text={task.text} />;
+        })}
+      </ul>
+    </div>
   );
 }
 
