@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+  color: #1ed760;
+  font-size: 32px;
+}
+
+body {
+  background-color: #0c0417;
+}
+
+.container {
+  padding: 55px 35px;
+  margin: 0 auto;
+}
+.spotify {
+  max-width: 140px;
+  max-height: 45px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  * {
+    font-size: 20px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .spotify {
+    max-width: 100px;
+    max-height: 35px;
+    margin-bottom: 20px;
+  }
+}
