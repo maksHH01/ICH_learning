@@ -1,0 +1,12 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  background-color: rgb(200, 245, 132);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
