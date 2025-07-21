@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.mainContainer {
+  text-align: center;
+  padding-top: 30px;
+}
