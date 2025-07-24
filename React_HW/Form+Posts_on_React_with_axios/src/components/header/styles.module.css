@@ -1,0 +1,26 @@
+.headerContainer {
+  display: flex;
+  padding: 38px 7%;
+  background-color: #3f5cc0;
+  color: white;
+  align-items: center;
+}
+
+.menuList {
+  display: flex;
+  align-items: center;
+  gap: 119px;
+  /* width: 100%; */
+  align-self: center;
+  margin: 0 auto;
+}
+
+.menuList li {
+  list-style: none;
+}
+
+.menuList a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
