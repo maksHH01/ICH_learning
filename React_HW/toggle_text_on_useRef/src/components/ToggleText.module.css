@@ -1,0 +1,32 @@
+.container {
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btnAndInput {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.text {
+  max-height: 200px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px 0px;
+  cursor: pointer;
+  max-width: 200px;
+}
+
+input {
+  padding: 10px;
+}
