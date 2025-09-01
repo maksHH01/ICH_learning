@@ -1,0 +1,24 @@
+.todoListSection {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgba(230, 230, 230, 0.4);
+  border-radius: 8px;
+  border: 1px solid rgb(230, 230, 230);
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.todoListSection > h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.todoListSection > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
