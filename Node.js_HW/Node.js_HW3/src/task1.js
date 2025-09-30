@@ -1,15 +1,15 @@
-import fs from "node:fs";
+import fs from "node:fs/promises";
 
-fs.mkdir("myFolder", (error) => {
-  if (error) {
-    return console.log("Ошибка при создании каталога", error);
-  }
-  console.log("Каталог успешно создан");
-});
+async function manageDirectory() {
+  try {
+    await fs.mkdir("myFolder");
+    console.log("Каталог успешно создан");
 
-fs.rmdir("myFolder", (error) => {
-  if (error) {
-    return console.log("Ошибка при удалении директории", error);
+    await fs.rmdir("myFolder");
+    console.log("Директория успешно удалена");
+  } catch (error) {
+    console.log("Произошла ошибка:", error);
   }
-  console.log("Директория успешно удалена");
-});
+}
+
+manageDirectory();

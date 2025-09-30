@@ -1,16 +1,16 @@
-import fs from "node:fs";
+import fs from "node:fs/promises";
 
-fs.writeFile("./src/info.txt", "Node.js is awesome!\n", (error) => {
-  if (error) {
-    return console.log("Запись в файл не удалась!", error);
-  }
-  console.log("Файл записан!");
-});
+async function manageFile() {
+  try {
+    await fs.writeFile("./src/info.txt", "Node.js is awesome!\n");
+    console.log("Файл записан!");
 
-fs.readFile("./src/info.txt", "utf-8", (error, data) => {
-  if (error) {
-    return console.log("Неудалось прочитать файл", error);
+    const data = await fs.readFile("./src/info.txt", "utf-8");
+    console.log("Файл успешно прочитан");
+    console.log(data);
+  } catch (error) {
+    console.log("Произошла ошибка:", error);
   }
-  console.log("Файл успешно прочитан");
-  console.log(data);
-});
+}
+
+manageFile();
