@@ -1,0 +1,11 @@
+Wed Oct 01 2025 20:57:13 GMT+0200 (Центральная Европа, летнее время) Error: Test error
+    at file:///C:/Users/stige/OneDrive/Desktop/Git/ICH_lerning/Node.js_HW/Node.js_HW5/task2/src/server.js:9:13
+    at Layer.handleRequest (C:\Users\stige\OneDrive\Desktop\Git\ICH_lerning\Node.js_HW\Node.js_HW5\task2\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\stige\OneDrive\Desktop\Git\ICH_lerning\Node.js_HW\Node.js_HW5\task2\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\stige\OneDrive\Desktop\Git\ICH_lerning\Node.js_HW\Node.js_HW5\task2\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\stige\OneDrive\Desktop\Git\ICH_lerning\Node.js_HW\Node.js_HW5\task2\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\stige\OneDrive\Desktop\Git\ICH_lerning\Node.js_HW\Node.js_HW5\task2\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\stige\OneDrive\Desktop\Git\ICH_lerning\Node.js_HW\Node.js_HW5\task2\node_modules\router\index.js:295:15
+    at processParams (C:\Users\stige\OneDrive\Desktop\Git\ICH_lerning\Node.js_HW\Node.js_HW5\task2\node_modules\router\index.js:582:12)
+    at next (C:\Users\stige\OneDrive\Desktop\Git\ICH_lerning\Node.js_HW\Node.js_HW5\task2\node_modules\router\index.js:291:5)
+    at Function.handle (C:\Users\stige\OneDrive\Desktop\Git\ICH_lerning\Node.js_HW\Node.js_HW5\task2\node_modules\router\index.js:186:3)

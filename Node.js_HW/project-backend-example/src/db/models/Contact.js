@@ -2,6 +2,8 @@ import { DataTypes } from "sequelize";
 
 import sequelize from "../sequelize.js";
 
+import { phone, email } from "../../constants/validation.js";
+
 const Contact = sequelize.define("contact", {
   fullname: {
     type: DataTypes.STRING,
@@ -10,10 +12,26 @@ const Contact = sequelize.define("contact", {
   phone: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: {
+      args: true,
+      msg: "Phone number already exist",
+    },
+    validate: {
+      is: {
+        args: phone.value,
+        msg: phone.message,
+      },
+    },
   },
-  category: {
+  email: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
+    validate: {
+      if: {
+        args: email.value,
+        msg: email.message,
+      },
+    },
   },
 });
 

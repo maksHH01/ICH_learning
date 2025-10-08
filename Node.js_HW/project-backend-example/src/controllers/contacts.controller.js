@@ -8,6 +8,8 @@ import {
   deleteContactById,
 } from "../services/contacts.service.js";
 
+import contactSchema from "../schemas/contacts.schemas.js";
+
 export const getContactController = async (req, res) => {
   const result = await getContacts();
   res.json(result);
@@ -29,6 +31,12 @@ export const getContactByIdController = async (req, res) => {
 };
 
 export const addContactController = async (req, res) => {
+  const { error } = contactSchema.parse(req.body);
+  if (error) {
+    const { message } = JSON.parse(error.message)[0];
+    throw HttpError(400, message);
+  }
+
   const result = await addContact(req.body);
   res.status(201).json(result);
 };

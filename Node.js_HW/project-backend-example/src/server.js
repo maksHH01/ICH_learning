@@ -6,6 +6,7 @@ import errorHandler from "./middlewares/errorHandler.js";
 
 import usersRouter from "./routers/user.router.js";
 import contactsRouter from "./routers/contacts.router.js";
+import validationRouter from "./routers/validation.router.js";
 
 const startServer = () => {
   const app = express();
@@ -13,6 +14,7 @@ const startServer = () => {
   app.use(cors());
   app.use(express.json());
 
+  app.use("/api/validatuion", validationRouter);
   app.use("/api/contacts", contactsRouter);
   app.use("/api/users", usersRouter);
 
