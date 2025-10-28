@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "8b594c0c-f2da-4e1a-a5f1-b2d3fa25a332",
+		"name": "Products API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48907754",
+		"_collection_link": "https://makshh01-6309522.postman.co/workspace/Max's-Workspace~59592c87-3ac6-4145-84bf-7de13c404f83/collection/48907754-8b594c0c-f2da-4e1a-a5f1-b2d3fa25a332?action=share&source=collection_link&creator=48907754"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

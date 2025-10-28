@@ -2,7 +2,7 @@ import { Router } from "express";
 
 import {
   addContactController,
-  getContactController,
+  getContactsController,
   getContactByIdController,
   updateContactByIdController,
   deleteContactByIdController,
@@ -10,7 +10,7 @@ import {
 
 const contactsRouter = Router();
 
-contactsRouter.get("/", getContactController);
+contactsRouter.get("/", getContactsController);
 
 contactsRouter.get("/:id", getContactByIdController);
 

@@ -27,14 +27,28 @@ const Contact = sequelize.define("contact", {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
-      if: {
+      is: {
         args: email.value,
         msg: email.message,
       },
     },
   },
+  categoryId: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    references: {
+      model: "categories",
+      key: "id",
+    },
+    onUpdate: "CASCADE",
+    onDelete: "SET NULL",
+  },
+  userId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
 });
 
-// Contact.sync({ alter: true });
+// Contact.sync({ force: true });
 
 export default Contact;
