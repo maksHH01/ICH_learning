@@ -1,0 +1,8 @@
+Сначала выполняешь эту команду:
+docker run --name my_postgres -e POSTGRES_USER=user -e POSTGRES_PASSWORD=pass -e POSTGRES_DB=contacts 
+-p 5432:5432  -d postgres:17
+
+Запускаешь бекенд: docker build -t backend /project-backend/Dockerfile
+docker run --name backend -e POSTGRES_USER=user -e POSTGRES_PASSWORD=pass -e POSTGRES_DB=contacts backend
+
+Запускаешь фронтенд: docker build -t
