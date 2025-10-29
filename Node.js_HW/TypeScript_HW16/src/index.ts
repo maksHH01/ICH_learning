@@ -1,63 +1,66 @@
-// Task 2
+// Task 1:
 
-// function division(a: number, b: number): number {
-//   return a / b;
+// function greetUser(name: string): string {
+//   return `Hello ${name}!`;
 // }
 
-// console.log(division(10, 2));
-// console.log(division("10", 2));
+// console.log(greetUser("Bohdan"));
 
-// Task 3
+// Task 2:
 
-// interface Car {
-//   make: string;
-//   model: string;
-//   year: number;
-//   isElectric: boolean;
+// interface Person {
+//   name: string;
+//   age: number;
+//   city: string;
 // }
 
-// function printCarInfo(car: Car): void {
-//   const type = car.isElectric ? "Electrocar" : "Car with bensine";
-//   console.log(`${car.make}, ${car.model}, year : ${car.year}, type: ${type}`);
-// }
-
-// const myCar: Car = {
-//   make: "Tesla",
-//   model: "Model S",
-//   year: 2022,
-//   isElectric: true,
+// const printPerosnInfo = (person: Person): void => {
+//   console.log(`Name: ${person.name}, Age: ${person.age}, City: ${person.city}`);
 // };
 
-// printCarInfo(myCar);
+// const me: Person = {
+//   name: "Max",
+//   age: 25,
+//   city: "Hamburg",
+// };
 
-// Task 4
+// printPerosnInfo(me);
 
-// const numbers: number[] = [2, 4, 6, 8];
+// Task 3:
 
-// function calculateSum(arr: number[]): number {
-//   return arr.reduce((acc: number, num: number): number => acc + num, 0);
+// const squareNumber = (num: number): number => {
+//   return num * num;
+// };
+
+// console.log(squareNumber(5));
+
+// Task 4:
+
+// const isEven = (num: number): boolean => {
+//   return num % 2 === 0;
+// };
+
+// console.log(isEven(6));
+
+// Task 5:
+
+// interface Student {
+//   name: string;
+//   grade: number;
 // }
 
-// console.log(calculateSum(numbers));
+// const printStudentInfo = (student: Student): void => {
+//   console.log(`Student: ${student.name}, Grade: ${student.grade}`);
+// };
 
-// Task 5
+// const student1: Student = { name: "Bohdan", grade: 95 };
 
-// function isAdult(age: number): boolean {
-//   return age >= 18;
+// printStudentInfo(student1);
+
+// Task 6:
+
+// function logMessage(message: string): void {
+//   console.log(message);
 // }
 
-// console.log(isAdult(19));
-
-// console.log(isAdult(12));
-
-// Task 6
-
-interface Task {
-  title: string;
-  description: string;
-  isComplited: boolean;
-}
-
-function getUncomplietedTasks(tasks: Task[]): Task[] {
-  return tasks.filter((task) => isCompleted);
-}
+// logMessage("Привет, ICH!");
