@@ -1,0 +1,103 @@
+Task 4:
+
+[
+    [
+        {
+            "IpProtocol": "tcp",
+            "FromPort": 22,
+            "ToPort": 22,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+                {
+                    "CidrIp": "217.229.75.150/32"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+        },
+        {
+            "IpProtocol": "tcp",
+            "FromPort": 3306,
+            "ToPort": 3306,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+                {
+                    "Description": "mysql",
+-- More  --
+
+
+Task 5: 
+
+
+aws ec2 create-security-group --group-name 280225-wdm-Maksym --description "Security Group for MySQL and HTTPS and SSH" --vpc-id vpc-03df9f47678978e7a --region eu-central-1
+
+aws ec2 authorize-security-group-ingress --group-id sg-0bc55dd5570b55439 --ip-permissions '[{"IpProtocol":"tcp","FromPort":3306,"ToPort":3306,"IpRanges":[{"CidrIp":"0.0.0.0/0","Description":"mysql"}]},{"IpProtocol":"tcp","FromPort":443,"ToPort":443,"IpRanges":[{"CidrIp":"0.0.0.0/0","Description":"https"}]}]' --region eu-central-1
+
+MYIP=$(curl -s https://checkip.amazonaws.com)
+aws ec2 authorize-security-group-ingress --group-id sg-0bc55dd5570b55439 --protocol tcp --port 22 --cidr ${MYIP}/32 --region eu-central-1
+
+
+
+
+Создана Security Group 280225-wdm-Maksym для инстанса i-06cf72bc1b3bc1bff в VPC vpc-03df9f47678978e7a. Добавлены inbound правила для MySQL (3306) и HTTPS (443) для всех адресов, SSH (22) только для моего IP 217.229.75.150/32.
+
+
+
+Task 6 :
+
+$ aws ec2 revoke-security-group-ingress --group-id sg-0bc55dd5570b55439 --protocol tcp --port 3306 --cidr 0.0.0.0/0 --region eu-central-1
+aws ec2 revoke-security-group-ingress --group-id sg-0bc55dd5570b55439 --protocol tcp --port 443 --cidr 0.0.0.0/0 --region eu-central-1
+aws ec2 revoke-security-group-ingress --group-id sg-0bc55dd5570b55439 --protocol tcp --port 22 --cidr 217.229.75.150/32 --region eu-central-1
+aws ec2 delete-security-group --group-id sg-0bc55dd5570b55439 --region eu-central-1
+{
+    "Return": true,
+    "RevokedSecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-01a194cb74b17f02a",
+            "GroupId": "sg-0bc55dd5570b55439",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 3306,
+            "ToPort": 3306,
+            "CidrIpv4": "0.0.0.0/0",
+            "Description": "mysql"
+        }
+    ]
+}
+
+{
+    "Return": true,
+    "RevokedSecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-059dc33f2659f686c",
+            "GroupId": "sg-0bc55dd5570b55439",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 443,
+            "ToPort": 443,
+            "CidrIpv4": "0.0.0.0/0",
+            "Description": "https"
+        }
+    ]
+}
+
+{
+    "Return": true,
+    "RevokedSecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-08b606f7bed9396ed",
+            "GroupId": "sg-0bc55dd5570b55439",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 22,
+            "ToPort": 22,
+            "CidrIpv4": "217.229.75.150/32"
+        }
+    ]
+}
+
+{
+    "Return": true,
+    "GroupId": "sg-0bc55dd5570b55439"
+}
+
