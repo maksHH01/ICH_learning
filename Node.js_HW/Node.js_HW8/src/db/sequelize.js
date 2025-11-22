@@ -1,5 +1,3 @@
-import { Sequelize } from "sequelize";
-
 // const sequelize = new Sequelize({
 //   dialect: process.env.DATABASE_DIALECT,
 //   database: process.env.DATABASE_NAME,
@@ -17,6 +15,19 @@ import { Sequelize } from "sequelize";
 //         }
 //       : {},
 // });
+
+// const sequelize = new Sequelize({
+//   dialect: "postgres",
+//   host: "localhost",
+//   port: 5432,
+//   database: "contacts",
+//   username: "user",
+//   password: "pass",
+// });
+
+// export default sequelize;
+
+import { Sequelize } from "sequelize";
 
 const sequelize = new Sequelize({
   dialect: "postgres",

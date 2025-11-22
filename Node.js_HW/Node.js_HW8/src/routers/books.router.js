@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { asyncHandler } from "../middlewares/errorHandler.js";
 
 import {
   addBookController,
@@ -9,12 +10,9 @@ import {
 
 const booksRouter = Router();
 
-booksRouter.get("/", getBooksController);
-
-booksRouter.post("/", addBookController);
-
-booksRouter.put("/:id", updateBooksByIdController);
-
-booksRouter.delete("/:id", deleteBookByIdController);
+booksRouter.get("/", asyncHandler(getBooksController));
+booksRouter.post("/", asyncHandler(addBookController));
+booksRouter.put("/:id", asyncHandler(updateBooksByIdController));
+booksRouter.delete("/:id", asyncHandler(deleteBookByIdController));
 
 export default booksRouter;
