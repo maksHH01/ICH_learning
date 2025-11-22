@@ -40,6 +40,7 @@ class Library {
 
   constructor(name: string) {
     this.name = name;
+    this.addBook();
   }
 
   addBook(): void {
@@ -52,11 +53,6 @@ class Library {
 
 const lib1 = new Library("School Library");
 const lib2 = new Library("City Library");
-
-lib1.addBook();
-lib2.addBook();
-lib1.addBook();
-lib2.addBook();
 
 console.log(Library.totalBooks);
 
